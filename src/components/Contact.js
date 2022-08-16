@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/networking.png";
 import "animate.css";
-import TrackVisibility from "react-on-screen";
+import './contact.css';
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -99,7 +99,7 @@ export const Contact = () => {
                       placeholder="Message"
                       onChange={(e) => onFormUpdate("message", e.target.value)}
                     ></textarea>
-                    <button type="submit">
+                    <button className="btnSend" type="submit">
                       <span>{buttonText}</span>
                     </button>
                   </Col>

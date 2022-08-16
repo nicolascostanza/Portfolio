@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Col, Row, Alert } from "react-bootstrap";
+import './Newsletter.css';
 
 export const Newsletter = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState("");
@@ -38,7 +39,7 @@ export const Newsletter = ({ status, message, onValidated }) => {
           </Col>
           <Col md={6} xl={7}>
             <form onSubmit={handleSubmit}>
-              <div className="new-email-bx">
+              <div className="new-email-bx columnMobile">
                 <input
                   value={email}
                   type="email"
