@@ -10,7 +10,7 @@ import projImg7 from "../assets/img/automation3.png";
 import projImg8 from "../assets/img/manual1.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
-import './projects.css'
+import "./projects.css";
 
 export const Projects = () => {
   const projects = [
@@ -24,18 +24,61 @@ export const Projects = () => {
           Trackgenix App
         </a>
       ),
-      description: "",
+      description:
+        "Application for managing jobs in a company, employee time tracking and project organization",
+      imgUrl: projImg1,
+    },
+    {
+      title: (
+        <a
+          href="https://nicolascostanza.github.io/quiz-app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Quiz App
+        </a>
+      ),
+      description: "General culture quiz game",
       imgUrl: projImg2,
     },
   ];
 
+  const projects2 = [
+    {
+      title: (
+        <a
+          href="https://github.com/nicolascostanza/TG-front"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Trackgenix App
+        </a>
+      ),
+      description:
+        "",
+      imgUrl: projImg3,
+    },
+    {
+      title: (
+        <a
+          href="https://github.com/nicolascostanza/quiz-app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Quiz App
+        </a>
+      ),
+      description:
+        "",
+      imgUrl: projImg4,
+    },
+  ];
   return (
     <section className="project" id="tests">
       <Container>
         <Row>
           <Col size={12}>
-            <div
-            >
+            <div>
               <h2>Projects</h2>
               <p>
                 In this section you will find the different projects made by me.
@@ -58,12 +101,17 @@ export const Projects = () => {
                     <Nav.Link eventKey="second">Repository</Nav.Link>
                   </Nav.Item>
                 </Nav>
-                <Tab.Content
-                  id="slideInUp"
-                >
+                <Tab.Content id="slideInUp">
                   <Tab.Pane eventKey="first">
                     <Row>
                       {projects.map((project, index) => {
+                        return <ProjectCard key={index} {...project} />;
+                      })}
+                    </Row>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="second">
+                    <Row>
+                      {projects2.map((project, index) => {
                         return <ProjectCard key={index} {...project} />;
                       })}
                     </Row>
