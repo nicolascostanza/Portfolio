@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Col, Row, Alert } from "react-bootstrap";
+import emailSender from "./emailSender/emailSender";
 import './Newsletter.css';
 
 export const Newsletter = ({ status, message, onValidated }) => {
@@ -11,6 +12,10 @@ export const Newsletter = ({ status, message, onValidated }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    emailSender({
+      email: email,
+      tipo: "Area Subscripcion",
+    });
     email &&
       email.indexOf("@") > -1 &&
       onValidated({

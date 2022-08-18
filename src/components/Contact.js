@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/networking.png";
+import emailSender from "./emailSender/emailSender";
 import "animate.css";
-import './contact.css';
+import "./contact.css";
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -14,7 +15,6 @@ export const Contact = () => {
   };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState({});
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -23,27 +23,19 @@ export const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
+    emailSender({
+      ...formDetails,
+      tipo: "Area contacto",
     });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: "Message sent successfully" });
-    } else {
-      setStatus({
-        succes: false,
-        message: "Something went wrong, please try again later.",
-      });
-    }
+    setTimeout(() => {
+      setButtonText("Message sent");
+      setTimeout(() => {
+        setButtonText("Send");
+      }, 2000);
+    }, 2000);
   };
 
   return (
@@ -103,17 +95,6 @@ export const Contact = () => {
                       <span>{buttonText}</span>
                     </button>
                   </Col>
-                  {status.message && (
-                    <Col>
-                      <p
-                        className={
-                          status.success === false ? "danger" : "success"
-                        }
-                      >
-                        {status.message}
-                      </p>
-                    </Col>
-                  )}
                 </Row>
               </form>
             </div>
