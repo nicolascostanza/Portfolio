@@ -41,6 +41,19 @@ export const Projects = () => {
       description: "General culture quiz game",
       imgUrl: projImg2,
     },
+    {
+      title: (
+        <a
+          href="https://nicolascostanza.github.io/weather-app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Meteo Fusion
+        </a>
+      ),
+      description: "Application to check the weather",
+      imgUrl: projImg5,
+    }
   ];
 
   const projects2 = [
@@ -71,6 +84,20 @@ export const Projects = () => {
       description:
         "",
       imgUrl: projImg4,
+    },
+    {
+      title: (
+        <a
+          href="https://github.com/nicolascostanza/weather-app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Meteo Fusion
+        </a>
+      ),
+      description:
+        "",
+      imgUrl: projImg6,
     },
   ];
   return (
