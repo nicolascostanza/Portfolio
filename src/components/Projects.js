@@ -17,89 +17,45 @@ export const Projects = () => {
     {
       title: (
         <a
-          href="https://alfonso-trackgenix-app.vercel.app/"
+          href="https://www.qirapagos.com/"
           target="_blank"
           rel="noreferrer"
         >
-          Trackgenix App
+          Qira Pagos
         </a>
       ),
-      description:
-        "Application for managing jobs in a company, employee time tracking and project organization",
-      imgUrl: projImg1,
-    },
-    {
-      title: (
-        <a
-          href="https://nicolascostanza.github.io/quiz-app/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Quiz App
-        </a>
-      ),
-      description: "General culture quiz game",
+      description: "Virtual wallet",
       imgUrl: projImg2,
     },
     {
       title: (
         <a
-          href="https://nicolascostanza.github.io/weather-app/"
+          href="https://www.qiraglobal.com/"
           target="_blank"
           rel="noreferrer"
         >
-          Meteo Fusion
+          Qira Global
         </a>
       ),
-      description: "Application to check the weather",
+      description:
+        "Agro ecommerce and back office with different profiles",
+      imgUrl: projImg1,
+    },
+    {
+      title: (
+        <a
+          href="https://www.syngenta.com.ar/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Syngenta
+        </a>
+      ),
+      description: "Informational page",
       imgUrl: projImg5,
     }
   ];
 
-  const projects2 = [
-    {
-      title: (
-        <a
-          href="https://github.com/nicolascostanza/TG-front"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Trackgenix App
-        </a>
-      ),
-      description:
-        "",
-      imgUrl: projImg3,
-    },
-    {
-      title: (
-        <a
-          href="https://github.com/nicolascostanza/quiz-app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Quiz App
-        </a>
-      ),
-      description:
-        "",
-      imgUrl: projImg4,
-    },
-    {
-      title: (
-        <a
-          href="https://github.com/nicolascostanza/weather-app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Meteo Fusion
-        </a>
-      ),
-      description:
-        "",
-      imgUrl: projImg6,
-    },
-  ];
   return (
     <section className="project" id="tests">
       <Container>
@@ -110,9 +66,13 @@ export const Projects = () => {
               <p>
                 In this section you will find the different projects made by me.
                 <li>
-                  <b>TRACKGENIX </b> is an App created for companies that are
-                  looking to hierarchize their company, manage their projects
-                  and have a control of the hours worked by each employee.
+                  <b>Qira Pagos </b> is a virtual wallet and financial tool for the agribusiness world.
+                </li>
+                <li>
+                  <b>Qira Global </b> is an application in which we can make various purchases in the field sector.
+                </li>
+                <li>
+                  <b>Syngenta </b> informative website for agricultural science and technology provider.
                 </li>
               </p>
               <Tab.Container id="projects-tabs" defaultActiveKey="first">
@@ -121,24 +81,12 @@ export const Projects = () => {
                   className="nav-pills mb-5 justify-content-center align-items-center classimportan"
                   id="pills-tab"
                 >
-                  <Nav.Item>
                     <Nav.Link eventKey="first">Deploy</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="second">Repository</Nav.Link>
-                  </Nav.Item>
                 </Nav>
                 <Tab.Content id="slideInUp">
                   <Tab.Pane eventKey="first">
                     <Row>
                       {projects.map((project, index) => {
-                        return <ProjectCard key={index} {...project} />;
-                      })}
-                    </Row>
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="second">
-                    <Row>
-                      {projects2.map((project, index) => {
                         return <ProjectCard key={index} {...project} />;
                       })}
                     </Row>
